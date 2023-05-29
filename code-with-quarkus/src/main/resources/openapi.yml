@@ -1,0 +1,25 @@
+# This file represents the OpenAPI specification for the LabSeqSwagger documentation.
+openapi: 3.0.3
+info:
+  title: LabSeq API
+  version: "1.0.0"
+paths:
+  /labseq/{n}:
+    get:
+      summary: Get labseq - l(n) value
+      description: Retrieves the labseq - l(n) value at the specified index.
+      parameters:
+        - in: path
+          name: n
+          description: Index of the labseq - l(n) value
+          required: true
+          schema:
+            type: integer
+            minimum: 0
+      responses:
+        "200":
+          description: labseq value returned successfully
+          content:
+            application/json:
+              schema:
+                type: integer
